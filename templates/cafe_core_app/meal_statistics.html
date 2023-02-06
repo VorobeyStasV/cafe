@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+    {% for el in value %}
+            <h1>{{ el.meal.name}}</h1>
+            <h1>{{ el.click.date }}</h1>
+    {% for elem in users %}
+    {% if el.id == elem.id %}}
+            <h1>{{ elem.name }}</h1><br>
+
+    {% endif %}
+    {% endfor %}
+    {% endfor %}
+        <div class="alert alert-success mt-2">
+            <h2>Топ-10 пользователей:</h2>
+    {% for key, el in res.items %}
+            <h3>{{ key }}</h3>
+            </div>
+        <div class=alert alert="success mt-2">
+            <h2>Топ-3 блюда:</h2>
+    {% for key, el in meal.items %}
+            <h3>{{ key }}: {{ el }} кликов:</h3>
+    {% endfor %}
+            </div>
+{% endblock %}
